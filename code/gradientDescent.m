@@ -1,5 +1,4 @@
 function [theta, J_history] = gradientDescent(X, y, theta, alpha, num_iters)
-
 % GRADIENTDESCENT Implementa o método de descido do gradiente para aprender
 % os parâmetros theta.
 %   theta = GRADIENTDESENT(X, y, theta, alpha, num_iters) updates theta by

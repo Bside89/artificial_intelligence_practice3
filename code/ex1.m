@@ -2,22 +2,21 @@
 
 %  Instruções
 %  ------------
-% 
+%
 %  Nesta atividade você alterar os seguintes arquivos:
 %
-%   
+%
 %     plotData.m
 %     gradientDescent.m
 %     computeCost.m
-%     
+%
 %
 %  Você não deve alterar o código desta atividade.
 %
-% 
+%
 
 %% Initialization
 clear all; close all; clc
-
 
 
 %% ======================= Parte 1: Mostrando os dados (plotting) =======================
@@ -54,10 +53,10 @@ fprintf('Theta encontrado pelo algoritmo de descida do gradiente: ');
 fprintf('%f %f \n', theta(1), theta(2));
 
 % Mostrando a reta calculada
-hold on; % 
+hold on; %
 plot(X(:,2), X*theta, '-')
 legend('Dados de treinamento', 'Regressão linear')
-hold off % 
+hold off %
 
 % Valores previstos para cidades com população de 35,000 e 70,000
 predict1 = [1, 3.5] *theta;
@@ -77,19 +76,18 @@ fprintf('Visualizando J(theta_0, theta_1) ...\n')
 theta0_vals = linspace(-10, 10, 100);
 theta1_vals = linspace(-1, 4, 100);
 
-% 
+%
 J_vals = zeros(length(theta0_vals), length(theta1_vals));
 
 % Calculando os valores dos custo
 for i = 1:length(theta0_vals)
     for j = 1:length(theta1_vals)
-	  t = [theta0_vals(i); theta1_vals(j)];    
-	  J_vals(i,j) = computeCost(X, y, t);
+        t = [theta0_vals(i); theta1_vals(j)];
+        J_vals(i,j) = computeCost(X, y, t);
     end
 end
 
-
-% Because of the way meshgrids work in the surf command, we need to 
+% Because of the way meshgrids work in the surf command, we need to
 % transpose J_vals before calling surf, or else the axes will be flipped
 J_vals = J_vals';
 % Surface plot
